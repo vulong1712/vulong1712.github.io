@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Overcoming the exam together</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{--bg:#f5f6f9;--card:#fff;--ink:#14213d;--mut:#5b6678;--line:#d9dfe9;--navy:#14284b;--gold:#a87a1f;--btn:#14284b;--btnt:#fff;--ok:#17744c;--warn:#9a6700;--risk:#b3362f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1626;--card:#16213a;--ink:#e8ecf4;--mut:#9aa6bd;--line:#2a3856;--navy:#0a1020;--gold:#d9b25a;--btn:#d9b25a;--btnt:#0e1626;--ok:#5fd29a;--warn:#e0b44d;--risk:#f08a82}}
+:root[data-theme=dark]{--bg:#0e1626;--card:#16213a;--ink:#e8ecf4;--mut:#9aa6bd;--line:#2a3856;--navy:#0a1020;--gold:#d9b25a;--btn:#d9b25a;--btnt:#0e1626;--ok:#5fd29a;--warn:#e0b44d;--risk:#f08a82}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'Be Vietnam Pro',system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:10}
+[hidden]{display:none!important}
+.w{max-width:1000px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 4px}
+.top b{font-size:1.05rem;letter-spacing:.01em}
+nav{display:flex;gap:4px;overflow-x:auto;white-space:nowrap}
+nav a{color:#cdd6e6;text-decoration:none;padding:8px 12px;border-bottom:3px solid transparent;font-size:.95rem}
+nav a.on{color:#fff;border-color:var(--gold)}
+main{padding:28px 0 40px}
+h2{font-size:1.65rem;line-height:1.25;margin:0 0 8px}
+h3{font-size:1.05rem;margin:0 0 6px}
+.hero{font-size:clamp(1.9rem,6vw,3rem);line-height:1.15;margin:12px 0 14px;max-width:18ch}
+.mut{color:var(--mut);font-size:.92rem;margin:0 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px}
+.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:14px 0 24px}
+.btn{display:inline-block;background:var(--btn);color:var(--btnt);border:0;border-radius:6px;padding:9px 16px;font-weight:600;font-size:.95rem;font-family:inherit;cursor:pointer;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.sm{padding:4px 10px;font-size:.82rem}
+a{color:var(--gold)}
+.sc{overflow-x:auto;margin:8px 0 24px}
+table{border-collapse:collapse;width:100%;min-width:520px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;font-size:.93rem}
+th{background:var(--bg)}
+input,select,textarea{font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px 10px;width:100%}
+textarea{min-height:90px}
+label{display:block;font-size:.9rem;font-weight:600;margin:10px 0 4px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));align-items:end}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 10px;font-size:.8rem;margin:0 6px 6px 0}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.risk{color:var(--risk)}
+.it{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:.93rem}
+.tk{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:8px 0}
+.tk input{width:auto;margin-top:5px}
+progress{width:100%;height:10px;accent-color:var(--gold)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.tabs button.on{background:var(--btn);color:var(--btnt)}
+.pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.stack>*+*{margin-top:12px}
+dialog{border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);width:min(440px,92%)}
+dialog::backdrop{background:#0008}
+footer{border-top:1px solid var(--line);padding:18px 0 32px;color:var(--mut);font-size:.85rem}
+</style>
+</head>
+<body>
+<header><div class="w">
+<div class="top"><b>Overcoming the exam together</b><button class="btn sm" id="me">Đăng ký</button></div>
+<nav><a href="#home">Trang chủ</a><a href="#exams">Kỳ thi</a><a href="#advice">Tư vấn điểm</a><a href="#uni">Trường ĐH</a><a href="#plan">Lộ trình</a><a href="#community">Cộng đồng</a></nav>
+</div></header>
+<main class="w">
+
+<section id="p-home">
+<h2 class="hero">Cùng nhau vượt qua kỳ thi</h2>
+<p style="max-width:60ch">Lịch thi, điểm chuẩn thực tế năm 2026, gợi ý ngành và trường theo điểm của bạn, cùng một góc học chung cho học sinh THPT.</p>
+<p><a class="btn" href="#advice">Gợi ý ngành theo điểm</a> <a class="btn alt" href="#plan">Xem lộ trình 3 năm</a></p>
+<div class="g">
+<a class="card" href="#exams" style="text-decoration:none;color:inherit"><h3>Kỳ thi</h3><p class="mut">THPT 2024 – 2026, HSA, TSA, V-ACT, V-SAT.</p></a>
+<a class="card" href="#uni" style="text-decoration:none;color:inherit"><h3>Trường đại học</h3><p class="mut">Phương thức xét tuyển và điểm chuẩn 2026.</p></a>
+<a class="card" href="#plan" style="text-decoration:none;color:inherit"><h3>Lộ trình</h3><p class="mut">Việc cần làm trong lớp 10, 11 và 12.</p></a>
+<a class="card" href="#community" style="text-decoration:none;color:inherit"><h3>Cộng đồng</h3><p class="mut">Đăng bài tập, trò chuyện, kết bạn, nhận xét trường.</p></a>
+</div>
+<h3>Mốc quan trọng năm 2026</h3>
+<div class="sc"><table><tr><th>Thời gian</th><th>Sự kiện</th></tr>
+<tr><td>24/4 – 5/5</td><td>Đăng ký thi tốt nghiệp THPT trên hệ thống của Bộ GD&amp;ĐT</td></tr>
+<tr><td>11 – 12/6</td><td>Thi tốt nghiệp THPT</td></tr>
+<tr><td>1/7</td><td>Công bố điểm thi lúc 8h</td></tr>
+<tr><td>9 – 11/8</td><td>Bách khoa Hà Nội, Kinh tế Quốc dân, Y Hà Nội và nhiều trường công bố điểm chuẩn</td></tr></table></div>
+</section>
+
+<section id="p-exams" hidden>
+<h2>Các kỳ thi vào đại học</h2>
+<h3>Thi tốt nghiệp THPT</h3>
+<div class="sc"><table><tr><th>Năm</th><th>Ngày thi</th><th>Cấu trúc</th><th>Công bố điểm</th></tr>
+<tr><td>2024</td><td>27 – 28/6</td><td>4 bài: Toán, Ngữ văn, Ngoại ngữ và tổ hợp KHTN hoặc KHXH (chương trình 2006)</td><td>11/7</td></tr>
+<tr><td>2025</td><td>26 – 27/6</td><td>Lứa đầu theo chương trình 2018: Toán, Ngữ văn và 2 môn tự chọn</td><td>16/7</td></tr>
+<tr><td>2026</td><td>11 – 12/6</td><td>Phương án 2 + 2; Ngữ văn tự luận, các môn còn lại trắc nghiệm</td><td>1/7</td></tr></table></div>
+<h3>Đánh giá năng lực và tư duy</h3>
+<div class="g">
+<div class="card"><h3>HSA – ĐHQG Hà Nội</h3><p class="mut">Thang 150, 195 phút, thi trên máy tính. Ba phần: Toán và xử lí số liệu; Văn – Ngôn ngữ; Khoa học hoặc Tiếng Anh. Năm 2026 có 6 đợt, từ 7/3 đến 24/5; chỉ 10,11% lượt thi đạt từ 100/150. HSA 2027 chưa có đề minh họa tính đến tháng 10/2026.</p><a href="https://khaothi.vnu.edu.vn" target="_blank" rel="noopener noreferrer">khaothi.vnu.edu.vn</a></div>
+<div class="card"><h3>TSA – Bách khoa Hà Nội</h3><p class="mut">Thang 100, đo tư duy toán, đọc hiểu và khoa học – giải quyết vấn đề. Năm 2026 có 3 đợt: 24–25/1, 14–15/3 và 16–17/5.</p><a href="https://tsa.hust.edu.vn" target="_blank" rel="noopener noreferrer">tsa.hust.edu.vn</a></div>
+<div class="card"><h3>V-ACT – ĐHQG TP.HCM</h3><p class="mut">Thang 1200. Năm 2026 dự kiến 2 đợt: 5/4 và 24/5.</p></div>
+<div class="card"><h3>V-SAT</h3><p class="mut">Do các trường phối hợp Trung tâm khảo thí quốc gia tổ chức, ĐH Ngân hàng TP.HCM khởi xướng. Thi nhiều đợt, khoảng tháng 3 – 7; muốn đạt điểm tối đa phải đúng cả 85 tiểu mục.</p></div>
+</div>
+</section>
+
+<section id="p-advice" hidden>
+<h2>Tư vấn ngành và trường theo điểm</h2>
+<p class="mut">Nhập tổng điểm 3 môn xét tuyển (thang 30). So với điểm chuẩn thực tế năm 2026.</p>
+<div class="card"><div class="row">
+<div><label for="sc">Tổng điểm 3 môn</label><input id="sc" type="number" min="0" max="30" step="0.05" placeholder="Ví dụ 26,5"></div>
+<div><label for="pr">Điểm ưu tiên, cộng (nếu có)</label><input id="pr" type="number" min="0" max="3" step="0.05" value="0"></div>
+<div><label for="gr">Nhóm ngành</label><select id="gr"><option value="all">Tất cả</option><option value="cn">Công nghệ, kỹ thuật</option><option value="kt">Kinh tế</option><option value="y">Y – Dược</option><option value="sp">Sư phạm, ngôn ngữ</option></select></div>
+<div><button class="btn" id="go">Gợi ý</button></div></div></div>
+<div id="res" class="stack" style="margin-top:16px"></div>
+</section>
+
+<section id="p-uni" hidden>
+<h2>Trường đại học</h2>
+<p class="mut">Phương thức xét tuyển dưới đây là những gì đã xác nhận qua nguồn tham khảo; luôn đối chiếu đề án tuyển sinh của trường.</p>
+<input id="uq" placeholder="Tìm trường, thành phố hoặc nhóm ngành" aria-label="Tìm trường">
+<div class="g" id="ul"></div>
+</section>
+
+<section id="p-plan" hidden>
+<h2>Lộ trình 3 năm THPT</h2>
+<p class="mut">Mốc lớp 12 lấy theo năm 2026; năm sau Bộ GD&amp;ĐT và các trường sẽ công bố lịch mới. Tick việc đã xong, tiến độ lưu trên máy này.</p>
+<progress id="pg" value="0" max="1"></progress><p class="mut" id="pgt"></p>
+<div class="g" id="plan"></div>
+</section>
+
+<section id="p-community" hidden>
+<h2>Cộng đồng</h2>
+<p class="mut" id="cm">Đang kết nối không gian chung…</p>
+<div class="tabs" id="ct"><button class="btn alt sm on" data-t="posts">Bài tập</button><button class="btn alt sm" data-t="chat">Trò chuyện</button><button class="btn alt sm" data-t="revs">Nhận xét trường</button><button class="btn alt sm" data-t="fr">Bạn bè</button></div>
+
+<div id="t-posts">
+<div class="card stack"><h3>Đăng bài lên không gian chung</h3>
+<input id="pt" placeholder="Tiêu đề, ví dụ: Đề Toán ôn HSA phần 1" maxlength="120" aria-label="Tiêu đề">
+<div class="row"><select id="pg2" aria-label="Lớp"><option>10</option><option>11</option><option>12</option></select><select id="ps" aria-label="Môn"></select></div>
+<textarea id="pb" placeholder="Nội dung hoặc đề bài" maxlength="2000" aria-label="Nội dung"></textarea>
+<input id="pu" placeholder="Liên kết đính kèm (bắt đầu bằng https://), không bắt buộc" aria-label="Liên kết">
+<button class="btn" id="pp">Đăng bài</button></div>
+<div class="row" style="margin:14px 0"><select id="fg" aria-label="Lọc lớp"><option value="">Mọi lớp</option><option>10</option><option>11</option><option>12</option></select><select id="fs" aria-label="Lọc môn"></select></div>
+<div id="pl" class="stack"></div></div>
+
+<div id="t-chat" hidden><div id="cl" class="card stack" style="max-height:380px;overflow:auto"></div>
+<div class="row" style="margin-top:12px"><input id="ci" placeholder="Nhắn cho cả nhóm" maxlength="300" aria-label="Tin nhắn"><button class="btn" id="cs">Gửi</button></div></div>
+
+<div id="t-revs" hidden><div class="card stack"><h3>Chia sẻ nhận xét về một trường</h3>
+<div class="row"><select id="rs" aria-label="Trường"></select><select id="rr" aria-label="Điểm"><option value="5">5 sao</option><option value="4">4 sao</option><option value="3">3 sao</option><option value="2">2 sao</option><option value="1">1 sao</option></select></div>
+<textarea id="rb" placeholder="Môi trường học, giảng viên, học phí, ký túc xá…" maxlength="1000" aria-label="Nhận xét"></textarea><button class="btn" id="rp">Gửi nhận xét</button></div>
+<div id="rl" class="stack" style="margin-top:14px"></div></div>
+
+<div id="t-fr" hidden><div id="fl" class="stack"></div></div>
+</section>
+</main>
+
+<footer><div class="w">Dữ liệu thi và điểm chuẩn 2026 tổng hợp từ VnExpress, VOV, Tiền Phong, Giáo dục Việt Nam, VietnamNet, Tuyển sinh 247 và Hocmai (tra cứu ngày 17/11/2026). Mốc 2024 – 2025 ghi theo hiểu biết chung, hãy đối chiếu công bố của Bộ GD&amp;ĐT. Điểm chuẩn thay đổi theo từng năm: luôn xem đề án tuyển sinh chính thức của trường.</div></footer>
+
+<dialog id="reg"><form id="rf">
+<h3>Tạo hồ sơ học sinh</h3><p class="mut">Hồ sơ chỉ lưu trên thiết bị này. Bài đăng chỉ hiện họ tên và lớp.</p>
+<label for="rm">Gmail</label><input id="rm" name="email" type="email" required placeholder="ten@gmail.com">
+<label for="rn">Họ và tên</label><input id="rn" name="name" required maxlength="60">
+<label for="rd">Ngày sinh</label><input id="rd" name="dob" type="date" required>
+<label for="rg">Lớp đang cần bài tập</label><select id="rg" name="grade"><option>10</option><option>11</option><option>12</option></select>
+<label for="rj">Môn, mục cần bài tập</label><select id="rj" name="subj"></select>
+<label for="rk">Dạng muốn tham khảo</label><select id="rk" name="kind"><option>Cơ bản</option><option>Nâng cao</option><option>Đề thi thử</option><option>Lý thuyết, tóm tắt</option></select>
+<p class="risk" id="re" role="alert"></p>
+<button class="btn" type="submit">Lưu hồ sơ</button> <button class="btn alt" type="button" id="rc">Đóng</button> <button class="btn alt" type="button" id="rx">Xóa hồ sơ</button>
+</form></dialog>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const el=(t,a,...k)=>{const e=document.createElement(t);for(const x in a||{}){const v=a[x];x==='class'?e.className=v:x.slice(0,2)==='on'?e.addEventListener(x.slice(2),v):e.setAttribute(x,v)}e.append(...k.flat());return e};
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const f2=n=>n.toFixed(2).replace('.',',');
+const SUBJ=['Toán','Ngữ văn','Tiếng Anh','Vật lí','Hóa học','Sinh học','Lịch sử','Địa lí','Tin học','Khác'];
+SUBJ.forEach(s=>['#ps','#rj'].forEach(i=>$(i).append(el('option',{},s))));
+$('#fs').append(el('option',{value:''},'Mọi môn'));SUBJ.forEach(s=>$('#fs').append(el('option',{},s)));
+
+const V=['home','exams','advice','uni','plan','community'];
+function route(){const v=V.includes(location.hash.slice(1))?location.hash.slice(1):'home';V.forEach(x=>$('#p-'+x).hidden=x!==v);$$('nav a').forEach(a=>a.classList.toggle('on',a.hash==='#'+v));scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+
+/* Tư vấn: điểm chuẩn 2026 (thang 30), tổng hợp từ báo chí */
+const D=[['Bách khoa Hà Nội','Khoa học dữ liệu và Trí tuệ nhân tạo',29.54,'cn'],['Bách khoa Hà Nội','Khoa học máy tính',29.27,'cn'],['Bách khoa Hà Nội','Toán – Tin',27.97,'cn'],['Bách khoa Hà Nội','Quản lý công nghiệp (EM2)',25.07,'kt'],['Bách khoa Hà Nội','Quản lý năng lượng (EM1)',24.56,'kt'],
+['Ngoại thương','Kinh tế đối ngoại (CT tiên tiến)',29.7,'kt'],['Ngoại thương','Kinh doanh quốc tế',29.5,'kt'],['Ngoại thương','Phân tích dữ liệu kinh doanh',29.5,'kt'],
+['Kinh tế Quốc dân','Kiểm toán',28.84,'kt'],['Kinh tế Quốc dân','Thương mại điện tử',28.62,'kt'],['Kinh tế Quốc dân','Logistics và Quản lý chuỗi cung ứng',28.53,'kt'],['Kinh tế Quốc dân','Kinh doanh quốc tế',28.5,'kt'],['Kinh tế Quốc dân','Kinh tế quốc tế',28.3,'kt'],['Kinh tế Quốc dân','Phân tích kinh doanh (BA)',27.4,'kt'],['Kinh tế Quốc dân','Kinh tế số',26.51,'kt'],
+['Y Hà Nội','Y khoa',28.5,'y'],['Y Hà Nội','Răng – Hàm – Mặt',27.57,'y'],['Y Hà Nội','Y khoa (Phân hiệu Thanh Hóa)',26.25,'y'],['Y Hà Nội','Công tác xã hội',17.75,'y'],
+['Sư phạm TP.HCM','Sư phạm Hóa học',29.83,'sp'],['ĐH Ngoại ngữ – ĐHQGHN','Sư phạm tiếng Anh',28.12,'sp'],
+['Ngân hàng TP.HCM','Kinh doanh quốc tế',24.53,'kt'],['Ngân hàng TP.HCM','Logistics và Quản lý chuỗi cung ứng',23.56,'kt']];
+const TI=[['Nên chọn','ok',x=>x.d>=1,'Điểm cao hơn điểm chuẩn từ 1 điểm trở lên.'],['Nên cân nhắc','warn',x=>x.d<1&&x.d>=-.5,'Điểm sát điểm chuẩn: đặt ở nguyện vọng giữa.'],['Thử sức','risk',x=>x.d<-.5&&x.d>=-1.5,'Thấp hơn chuẩn 0,5 đến 1,5 điểm: chỉ nên đặt ở nguyện vọng đầu.']];
+$('#go').onclick=()=>{const s=parseFloat($('#sc').value.replace(',','.'))+(parseFloat($('#pr').value)||0),g=$('#gr').value,o=$('#res');o.replaceChildren();
+if(isNaN(s)||s<0||s>33){o.append(el('p',{class:'risk'},'Nhập tổng điểm từ 0 đến 30.'));return}
+const rows=D.filter(r=>g==='all'||r[3]===g).map(r=>({r,d:+(s-r[2]).toFixed(2)}));
+TI.forEach(t=>{const l=rows.filter(t[2]).sort((a,b)=>b.r[2]-a.r[2]);o.append(el('div',{class:'card'},el('h3',{class:t[1]},t[0]+' ('+l.length+')'),el('p',{class:'mut'},t[3]),...(l.length?l.map(x=>el('div',{class:'it'},el('span',{},x.r[0]+': '+x.r[1]),el('span',{},'chuẩn '+f2(x.r[2])+', '+(x.d>=0?'+':'')+f2(x.d).replace('-','−')))):[el('p',{class:'mut'},'Chưa có ngành nào trong dữ liệu.')])))});
+o.append(el('p',{class:'mut'},'Điểm chuẩn mỗi năm có thể lệch 0,5 đến 1 điểm. Dữ liệu chỉ gồm các ngành tiêu biểu đã công bố, chưa phải toàn bộ ngành của từng trường.'))};
+
+/* Trường */
+const U=[
+{n:'Đại học Bách khoa Hà Nội',c:'Hà Nội',g:'Kỹ thuật, công nghệ',m:['THPT','TSA (thi riêng)','Xét tài năng'],p:'2026: Khoa học dữ liệu và AI 29,54; Khoa học máy tính 29,27.'},
+{n:'Đại học Kinh tế Quốc dân',c:'Hà Nội',g:'Kinh tế, quản trị',m:['THPT','ĐGNL, ĐGTD kết hợp'],p:'2026: Kiểm toán 28,84. Trường dự kiến bỏ xét kết hợp IELTS với ĐGNL, ĐGTD.'},
+{n:'Đại học Ngoại thương',c:'Hà Nội',g:'Kinh tế đối ngoại',m:['THPT','SAT','HSA'],p:'2026: Kinh tế đối ngoại (CT tiên tiến) 29,7; có điều chỉnh cách quy đổi SAT và HSA.'},
+{n:'Đại học Y Hà Nội',c:'Hà Nội',g:'Y – Dược',m:['THPT'],p:'2026: Y khoa 28,5; Răng – Hàm – Mặt 27,57; tuyển 2.150 chỉ tiêu.'},
+{n:'ĐHQG Hà Nội',c:'Hà Nội',g:'Đa ngành',m:['HSA (thi riêng)'],p:'Điểm chuẩn cao nhất 2026 trong ĐHQGHN: Sư phạm tiếng Anh (ĐH Ngoại ngữ) 28,12.'},
+{n:'Đại học Giao thông vận tải',c:'Hà Nội',g:'Kỹ thuật, giao thông',m:['THPT','Học bạ kết hợp','TSA','HSA','ĐGNL ĐHQG-HCM'],p:'Mỗi phương thức được quy đổi về thang điểm THPT rồi cộng ưu tiên.'},
+{n:'Đại học Công nghệ GTVT',c:'Hà Nội',g:'Công nghệ, kỹ thuật',m:['THPT','Học bạ','TSA','HSA','SPT'],p:'Điểm sàn 2026: THPT 15–20; TSA 38–45,67; HSA 50–73. Luật và Ngôn ngữ Anh không nhận TSA, HSA.'},
+{n:'Đại học Khoa học và Công nghệ Hà Nội (USTH)',c:'Hà Nội',g:'Khoa học, công nghệ',m:['THPT'],p:'Điểm chuẩn 2026 từ 19 đến 25,24.'},
+{n:'Đại học Sư phạm TP.HCM',c:'TP.HCM',g:'Sư phạm',m:['THPT'],p:'2026: Sư phạm Hóa học 29,83.'},
+{n:'Đại học Ngân hàng TP.HCM',c:'TP.HCM',g:'Kinh tế, tài chính',m:['THPT','V-SAT'],p:'Trường khởi xướng V-SAT. 2026: Kinh doanh quốc tế 24,53.'}];
+function uni(){const q=$('#uq').value.toLowerCase();$('#ul').replaceChildren(...U.filter(u=>(u.n+u.g+u.c).toLowerCase().includes(q)).map(u=>el('div',{class:'card'},el('h3',{},u.n),el('p',{class:'mut'},u.c+', '+u.g),el('div',{},...u.m.map(x=>el('span',{class:'chip'},x))),el('p',{style:'margin:6px 0 0;font-size:.93rem'},u.p))))}
+$('#uq').oninput=uni;uni();
+U.forEach(u=>$('#rs').append(el('option',{},u.n)));
+
+/* Lộ trình */
+const R=[['Lớp 10','Xây nền, khám phá ngành',['Chọn môn lựa chọn dựa trên ngành quan tâm','Giữ đều Toán, Ngữ văn, Tiếng Anh: nền của mọi kỳ thi','Tìm hiểu 3 đến 5 ngành, đọc điểm chuẩn năm gần nhất','Tham gia một câu lạc bộ hoặc cuộc thi học thuật','Học ngoại ngữ đều đặn, mỗi tuần ít nhất 3 buổi']],
+['Lớp 11','Chọn hướng, đo năng lực',['Chọn 2 đến 3 ngành mục tiêu và 3 trường tương ứng','Làm đề mô phỏng HSA, TSA để biết điểm xuất phát','Ôn sâu các môn trong tổ hợp xét tuyển','Thi chứng chỉ ngoại ngữ nếu trường mục tiêu có xét','Lập hồ sơ thành tích, giữ học bạ ổn định']],
+['Lớp 12','Về đích theo mốc 2026',['Tháng 1 – 5: thi HSA, TSA, V-ACT (HSA 7/3–24/5; TSA 24–25/1, 14–15/3, 16–17/5)','Cuối tháng 4: đăng ký thi tốt nghiệp (2026: 24/4–5/5)','Giữa tháng 6: thi tốt nghiệp THPT (2026: 11–12/6)','Đầu tháng 7: nhận điểm (2026: 1/7), cân nhắc phúc khảo','Tháng 7: đăng ký nguyện vọng, xếp từ trường mơ ước đến an toàn','Tháng 8: xem điểm chuẩn, xác nhận nhập học trực tuyến']]];
+const done=ls.get('plan',{});
+function plan(){const b=$('#plan');b.replaceChildren();let t=0,c=0;R.forEach((g,i)=>b.append(el('div',{class:'card'},el('h3',{},g[0]+': '+g[1]),...g[2].map((x,j)=>{const k=i+'-'+j;t++;if(done[k])c++;return el('label',{class:'tk'},el('input',Object.assign({type:'checkbox',onchange:e=>{done[k]=e.target.checked;ls.set('plan',done);plan()}},done[k]?{checked:''}:{})),el('span',{},x))}))));$('#pg').max=t;$('#pg').value=c;$('#pgt').textContent=c+' trên '+t+' việc đã xong'}
+plan();
+
+/* Hồ sơ */
+let P=ls.get('profile',null),F=ls.get('friends',[]);
+function who(){$('#me').textContent=P?P.name:'Đăng ký';if(P){$('#fg').value=P.grade;$('#fs').value=P.subj;$('#pg2').value=P.grade;$('#ps').value=P.subj}}
+$('#me').onclick=()=>{if(P)for(const k in P)if($('#rf').elements[k])$('#rf').elements[k].value=P[k];$('#reg').showModal()};
+$('#rc').onclick=()=>$('#reg').close();
+$('#rx').onclick=()=>{P=null;ls.set('profile',null);$('#rf').reset();who();$('#reg').close()};
+$('#rf').addEventListener('submit',e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));if(!/^[^@\s]+@gmail\.com$/i.test(d.email)){$('#re').textContent='Nhập đúng địa chỉ Gmail, ví dụ ten@gmail.com.';return}$('#re').textContent='';P=d;ls.set('profile',P);$('#reg').close();who();rAll()});
+const need=()=>{if(P)return true;$('#reg').showModal();return false};
+who();
+
+/* Cộng đồng: dùng cơ sở dữ liệu chung nếu có, không thì lưu trên máy */
+let DB=null;const S={posts:[],chat:[],revs:[]},L={};
+function sub(c){const cb=a=>{S[c]=a;rAll()};
+if(DB){DB.collection(c).orderBy('t','desc').limit(100).onSnapshot(s=>cb(s.docs.map(d=>Object.assign({id:d.id},d.data()))),()=>{$('#cm').textContent='Không đọc được không gian chung lúc này.'})}
+else{L[c]=()=>cb(ls.get('c_'+c,[]));L[c]()}}
+async function add(c,o){if(!need())return false;o.t=Date.now();o.by=P.name;o.g=o.g||P.grade;
+if(DB){try{await DB.collection(c).add(o);return true}catch(e){$('#cm').textContent='Bạn cần quyền Contributor để đăng lên không gian chung. Hãy nhờ chủ trang chia sẻ quyền này.';return false}}
+const a=ls.get('c_'+c,[]);o.id=''+o.t;a.unshift(o);ls.set('c_'+c,a.slice(0,200));L[c]();return true}
+function addF(n,g){if(P&&n===P.name)return;if(!F.some(x=>x.n===n)){F.push({n,g});ls.set('friends',F);rAll()}}
+const fb=p=>(P&&p.by===P.name)?'':el('button',{class:'btn alt sm',onclick:()=>need()&&addF(p.by,p.g)},F.some(x=>x.n===p.by)?'Đã kết bạn':'Kết bạn');
+function rAll(){
+const g=$('#fg').value,s=$('#fs').value,pl=S.posts.filter(p=>(!g||p.g===g)&&(!s||p.s===s));
+$('#pl').replaceChildren(...(pl.length?pl.map(p=>el('article',{class:'card'},el('h3',{},p.title),el('p',{class:'mut'},'Lớp '+p.g+', '+p.s+', đăng bởi '+p.by),el('p',{class:'pre',style:'margin:0 0 8px'},p.body||''),/^https:\/\//.test(p.url||'')?el('a',{href:p.url,target:'_blank',rel:'noopener noreferrer'},'Mở liên kết đính kèm'):'',' ',fb(p))):[el('p',{class:'mut'},'Chưa có bài nào. Hãy là người đăng bài đầu tiên.')]));
+$('#cl').replaceChildren(...(S.chat.length?S.chat.slice().reverse().map(m=>el('div',{},el('b',{},m.by+': '),el('span',{class:'pre'},m.text))):[el('p',{class:'mut'},'Chưa có tin nhắn.')]));
+$('#rl').replaceChildren(...(S.revs.length?S.revs.map(r=>el('article',{class:'card'},el('h3',{},r.school+', '+r.stars+' sao'),el('p',{class:'pre',style:'margin:0 0 6px'},r.text),el('p',{class:'mut'},'Bởi '+r.by+', lớp '+r.g+' '),fb(r))):[el('p',{class:'mut'},'Chưa có nhận xét nào.')]));
+$('#fl').replaceChildren(...(F.length?F.map(f=>el('div',{class:'card'},el('b',{},f.n),' lớp '+f.g)):[el('p',{class:'mut'},'Bạn chưa có bạn học nào. Bấm “Kết bạn” ở bài đăng hoặc nhận xét.')]))}
+$('#fg').onchange=$('#fs').onchange=rAll;
+$('#pp').onclick=async()=>{const t=$('#pt').value.trim(),b=$('#pb').value.trim();if(!t||!b)return;if(await add('posts',{title:t,body:b,g:$('#pg2').value,s:$('#ps').value,url:$('#pu').value.trim()}))$('#pt').value=$('#pb').value=$('#pu').value=''};
+$('#cs').onclick=async()=>{const t=$('#ci').value.trim();if(t&&await add('chat',{text:t}))$('#ci').value=''};
+$('#ci').onkeydown=e=>{if(e.key==='Enter')$('#cs').click()};
+$('#rp').onclick=async()=>{const t=$('#rb').value.trim();if(t&&await add('revs',{school:$('#rs').value,stars:$('#rr').value,text:t}))$('#rb').value=''};
+$$('#ct button').forEach(b=>b.onclick=()=>{$$('#ct button').forEach(x=>x.classList.toggle('on',x===b));['posts','chat','revs','fr'].forEach(t=>$('#t-'+t).hidden=t!==b.dataset.t)});
+(async()=>{try{DB=await window.claude.use('db')}catch(e){DB=null}
+$('#cm').textContent=DB?'Không gian chung: mọi người mở liên kết này đều thấy bài và tin nhắn mới.':'Chưa kết nối được không gian chung, nội dung đang lưu riêng trên máy này.';
+['posts','chat','revs'].forEach(sub);rAll()})();
+</script>
+</body>
+</html>
